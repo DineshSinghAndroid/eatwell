@@ -16,7 +16,7 @@ class LoadingWidget extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Lottie.asset(
-      "assets/loading3.json",
+      "assets/json/loading3.json",
     );
   }
 }

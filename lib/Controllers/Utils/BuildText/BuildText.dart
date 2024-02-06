@@ -14,13 +14,33 @@ class BuildText {
       TextAlign? textAlign,
       TextOverflow? overflow,
       int? maxLines}) {
-    return Text(text,
-        style: style ??
-            GoogleFonts.ptSerif(
+    return Text(text, textAlign: TextAlign.start,
+        style: TextStyle(
               color: color ?? Colors.black,
               fontSize: size ?? 14,
               fontWeight: weight ?? FontWeight.w500,
             ));
+  }
+}
+
+class BuildTitle {
+  static Widget buildTitle(
+      {required String text,
+        TextStyle? style,
+        TextDecoration? decoration,
+        String? fontFamily,
+        double? size,
+        FontWeight? weight,
+        Color? color,
+        TextAlign? textAlign,
+        TextOverflow? overflow,
+        int? maxLines}) {
+    return Text(text, textAlign: TextAlign.start,
+        style: TextStyle(
+          color: color ?? Colors.black,
+          fontSize: size ?? 14,
+          fontWeight: weight ?? FontWeight.w500,
+        ));
   }
 }
 

@@ -1,6 +1,5 @@
-
-import 'package:eatwell/Views/%20BottomNavigationBar/searchRestrauntScreen/searchRestranutController.dart';
- import 'package:flutter/material.dart';
+ import 'package:eatwell/Views/searchRestrauntScreen/searchRestranutController.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../Controllers/Utils/BuildText/BuildText.dart';

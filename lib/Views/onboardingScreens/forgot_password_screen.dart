@@ -18,53 +18,75 @@ class ForgotPasswordScreen extends StatelessWidget {
         return LoadScreen(
             widget: Scaffold(
               body: SafeArea(
-                child: Container(
-                  height: Get.height,
-                  width: Get.width,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      CircleAvatar(
-                        radius: 90,
-                        backgroundColor: Colors.green,
-                        child: Icon(Icons.lock, size: 50, color: Colors.white),
-                      ),
-                      buildSizeBox(40.0, 0.00),
-
-
-                      BuildText.buildText(
-                          text: 'Forgot Password',
-                          color: Colors.green,weight: FontWeight.w800),
-                      Spacer(),
-
-                      TextField(
-                        decoration: InputDecoration(
-                            hintText: 'E-mail',
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 15),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30))),
-                      ),
-                      buildSizeBox(40.0, 0.00),
-
-                      ButtonCustom(
-                          onPressed: () {},
-                             text: 'Retrieve',
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    height: Get.height,
+                    width: Get.width,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        CircleAvatar(
+                          radius: 100,
+                          backgroundColor: Colors.lightGreen.shade200,
+                          child: CircleAvatar(
+                            radius: 70,
+                            backgroundColor: Colors.lightGreen,
+                            child: Icon(Icons.lock_outline,
+                                size: 80, color: Colors.white),
                           ),
-                      MaterialButton(
+                        ),
+                        buildSizeBox(20.0, 0.00),
+                        BuildText.buildText(
+                            text: 'Forgot Password',
+                            color: Colors.green,
+                            weight: FontWeight.w800),
 
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()),
-                            );
-                          },
-                          child: BuildText.buildText(
-                            text: 'Cancel',
-                          )),
-                      Spacer()
-                    ],
+                        buildSizeBox(40.0, 0.00),
+                        TextField(
+                          // controller: _loginCtrl.passwordCtrl,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            labelText: 'E-mail',
+                            hintText: 'E-mail',
+                            hintStyle: TextStyle(color: Colors.grey),
+                            labelStyle: TextStyle(color: Colors.lightGreen),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.lightGreen, width: 1.22),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.lightGreen),
+                            ),
+                          ),
+                        ),
+                        buildSizeBox(40.0, 0.00),
+                        ButtonCustom(
+                            onPressed: () {
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) =>
+                              //           BottomNavigationBarHome()),
+                              // );
+                              //_loginCtrl.onTapLoginBtn(context: context);
+                            },
+                            text: 'Retrieve'),
+                        MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()),
+                              );
+                            },
+                            child: BuildText.buildText(
+                              text: 'Cancel',
+                              color: Colors.grey
+                            )),
+                        Spacer()
+                      ],
+                    ),
                   ),
                 ),
               ),

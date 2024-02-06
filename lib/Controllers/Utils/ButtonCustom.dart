@@ -35,7 +35,7 @@ class ButtonCustom extends MaterialButton {
       onTap: onPressed,
       child: Container(
         decoration: BoxDecoration(
-            color: backgroundColor ?? AppColors.appBarBackgroundColor.withOpacity(0.7),
+            color: backgroundColor ?? AppColors.appBarBackgroundColor,
             borderRadius: const BorderRadius.all(Radius.circular(15))),
         height: buttonHeight ?? 40,
         width: buttonWidth ?? Get.width,

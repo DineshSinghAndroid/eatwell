@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fluttertoast/fluttertoast.dart';
  import '../../Models/LoginModel.dart';
+import '../../Models/ModelRecipesList.dart';
 import '../../Models/RegistrationModel.dart';
 import '../ConnectionValidator/ConnectionValidator.dart';
 import 'WebConstant.dart';
@@ -40,8 +41,36 @@ class ApiControllerAdmin {
     return result;
   }
 
+  ///Recipes
+  Future<ModelRecipesList?> recipesApiHit({
+    context,
+    required String url,
+    required dictData,
+    String? token,
+  }) async {
+    ModelRecipesList? result;
 
+    if (await ConnectionValidator().check()) {
+      try {
+        final response = await requestGetForApi(
+            context: context, url: url, dictParameter: dictData, token: token);
+        if (response?.data != null && response?.statusCode == 200) {
 
+          result = ModelRecipesList.fromJson(response?.data);
+          return result;
+        } else {
+          return result;
+        }
+      } catch (e) {
+        print("Exception_main1: $e");
+        return result;
+      }
+    } else {
+      Fluttertoast.showToast(
+          msg: "Please check network connection and try again!");
+    }
+    return result;
+  }
 
   ///methods
   Future<Response?> requestGetForApi(
